@@ -1,0 +1,27 @@
+<navbar>
+  <span>{message}</span>
+  <ul onclick={select}>
+    <li>
+      <a href="#">Home</a>
+    </li>
+    <li>
+      <a href="#">People</a>
+    </li>
+    <li>
+      <a href="#">New Person</a>
+    </li>
+  </ul>
+
+  <script>
+
+    var navbar = require('../scripts/navbar');
+
+    select = navbar.select;
+
+    navbar(this);
+    
+    navbar.messenger('called 2');
+
+  </script>
+
+</navbar>

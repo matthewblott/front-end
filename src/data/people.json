@@ -1,0 +1,7 @@
+{
+  "people": [
+    {"first": "Fred", "last": "Bloggs"},
+    {"first": "John", "last": "Doe"},
+    {"first": "Sally", "last": "Smith"}
+  ]
+}

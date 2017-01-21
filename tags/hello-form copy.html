@@ -1,0 +1,34 @@
+<hello-form>
+
+  <form onsubmit={sayHello}>
+    <input type="text" name="greet">
+    <button>Say Hello</button>  
+  </form>
+
+  <hello-world show={this.greeting} greet={this.greeting}></hello-world>
+
+  <script>
+    
+    (() => {
+      console.log('es6 functions are recognised');     
+    })();
+    
+    console.log('some line was called ..');     
+
+    (function() {
+      console.log('es5 functions are recognised');     
+    })();
+
+    var math = require('../scripts/math');
+    var result = math.add(4, 3);
+
+    sayHello() {
+      this.greeting = this.greet.value;
+      this.greet.value = '';
+    }  
+
+    console.log(result);
+
+  </script>
+
+</hello-form>

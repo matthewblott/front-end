@@ -1,0 +1,3 @@
+riot --ext html ./tags/hello-world.tag
+riot -w ./tags ./src/tags/all.js --ext html
+

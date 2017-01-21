@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Riot - Contacts List - Ajax Style</title>
+</head>
+<body>
+
+  <contact-list></contact-list>
+  <script src="node_modules/riot/riot.min.js"></script>
+  <script src="src/scripts/all.js"></script>
+  <script>
+
+    riot.mount('contact-list', { callback: tagCallback });
+
+    function tagCallback(theTag) {
+      console.log('callback executed');
+
+      var request = new XMLHttpRequest();
+
+      request.open('GET', 'src/data/people.json', true);
+
+      request.onload = () => {
+        if(request.status === 200) {
+          var data = JSON.parse(request.responseText);
+          theTag.trigger('data_loaded', data.people);
+        }
+      };
+      
+      // simulate slow server response
+      setTimeout(() => {
+        request.send();
+      }, 1000);
+
+    }
+
+  </script>
+
+</body>
+</html>

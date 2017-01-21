@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+  <hello-world greet="Matt"></hello-world>
+  <hello-world></hello-world>
+  <hello-form></hello-form>
+  <script src="node_modules/riot/riot.min.js"></script>
+  <script src="src/scripts/all.js"></script>
+  <script>
+
+    riot.mount('hello-world', { greet: 'Joe' });
+    riot.mount('hello-form');
+
+  </script>
+</body>
+</html>
