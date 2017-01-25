@@ -1,7 +1,7 @@
 {
   "people": [
-    {"first": "Fred", "last": "Bloggs"},
-    {"first": "John", "last": "Doe"},
-    {"first": "Sally", "last": "Smith"}
+    {"first": "John", "last": "Wayne"},
+    {"first": "Elizabeth", "last": "Taylor"},
+    {"first": "Gary", "last": "Cooper"}
   ]
 }

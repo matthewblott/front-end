@@ -1,4 +1,23 @@
 <people>
-  <h1>{opts.caption}</h1>
-  <div>abc</div>
+
+  <h1>People</h1>
+
+  <ul>
+    <li each={p in opts.people }>{p.first} {p.last}</li>
+  </ul>
+
+  <script>
+
+    this.on('mount', () => {
+      console.log('people mount event fired');
+      opts.callback(this);
+    });
+
+    this.on('data_loaded', (people) => {
+      opts.people = people;
+      this.update();
+    });
+
+  </script>
+
 </people>

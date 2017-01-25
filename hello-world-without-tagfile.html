@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+  <hello-world greet="Matt"></hello-world>
+  <hello-world></hello-world>
+  <script src="https://cdn.jsdelivr.net/riot/3.0.7/riot.min.js"></script>
+  <script>
+
+    // avoid riot.tag2 (https://github.com/riot/riot/issues/1880)
+    riot.tag('hello-world', '<h5>hello {opts.greet}</h5>', '', '', (opts) => {
+
+    });
+
+    riot.mount('hello-world', { greet: 'Joex' });
+
+  </script>
+</body>
+</html>

@@ -1,3 +1,5 @@
 riot --ext html ./tags/hello-world.tag
 riot -w ./tags ./src/tags/all.js --ext html
 
+# examples
+riot ./tags ./scripts/bundle.js --ext html

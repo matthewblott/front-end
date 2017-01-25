@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+  
+  <navbar></navbar>
+
+  <people></people>
+
+  <hello-form></hello-form>
+  <script src="https://cdn.jsdelivr.net/riot/3.0.7/riot.min.js"></script>
+  <script src="scripts/bundle.js"></script>
+  <script>
+
+    riot.mount('navbar');
+
+    riot.mount('people', { callback: callback });
+    riot.mount('hello-world', { greet: 'Joe' });
+    riot.mount('hello-form');
+
+    function callback(tag) {
+      console.log('callback executed');
+
+      var req = new XMLHttpRequest();
+
+      req.open('GET', 'data/people.json', true);
+      req.onload = () => {
+        if(req.status === 200){
+          var data = JSON.parse(req.responseText);
+          tag.trigger('data_loaded', data.people);
+        };
+      };
+      
+      req.send();
+
+    }
+
+  </script>
+</body>
+</html>

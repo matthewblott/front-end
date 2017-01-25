@@ -1,4 +1,45 @@
+// can't put a script tag here for mixins
+
+var OptsMixin = {
+  init: function() {
+    this.on('updated', function() { console.log('Updated!') })
+  },
+
+  getOpts: function() {
+    return this.opts
+  },
+
+  setOpts: function(opts, update) {
+    this.opts = opts
+    if (!update) this.update()
+    return this
+  }
+}
+
 <navbar>
+
+  <style>
+  
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      display: inline;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+  </style>
+
   <span>{message}</span>
   <ul onclick={select}>
     <li>
@@ -10,17 +51,29 @@
     <li>
       <a href="#">New Person</a>
     </li>
+    <li>
+      <a href="#" onclick="{click}">Get</a>
+    </li>
   </ul>
 
   <script>
 
-    var navbar = require('../scripts/navbar');
+    this.mixin(OptsMixin);
 
-    select = navbar.select;
+    click() {
+      
+      var message = '';
 
-    navbar(this);
-    
-    navbar.messenger('called 2');
+      
+
+      console.log(message);
+
+    };
+
+    // var navbar = require('../scripts/navbar');
+    // select = navbar.select;
+    // navbar(this);
+    // navbar.messenger('called 2');
 
   </script>
 

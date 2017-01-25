@@ -1,19 +1,42 @@
 <hello-form>
 
-  <form onsubmit={sayHello}>
-    <input type="text" name="greet">
-    <button>Say Hello</button>
+  <style>
+
+    * {
+      color:blue;
+    }
+
+  </style>
+
+  <form onsubmit={submit}>
+    <input ref="greet">
+    <button>Say Hello!!!</button>  
   </form>
 
   <hello-world show={this.greeting} greet={this.greeting}></hello-world>
 
   <script>
-    sayHello(){
-      this.greeting = this.greet.value
-      this.greet.value = ''
-    }
+    
+    (() => {
+      console.log('es6 functions are recognised');     
+    })();
+    
+    console.log('some line was called ..');     
 
-    console.log('x')
+    (function() {
+      console.log('es5 functions are recognised');     
+    })();
+
+    this.on('mount', () => {
+      console.log('mounted')
+    })
+
+    submit(e) {
+      e.preventDefault()
+      this.greeting = this.refs.greet.value;
+      this.refs.greet.value = '';
+    }  
 
   </script>
+
 </hello-form>
