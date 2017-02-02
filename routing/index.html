@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      display: inline;
+    }
+
+    .hide {
+      display: none;
+    }
+
+    .show {
+      display: block;
+    }
+
+  </style>
+</head>
+<body>
+  <script src="https://cdn.jsdelivr.net/riot/3.0.7/riot+compiler.min.js"></script>
+  <script src="route+tag.min.js"></script>
+
+  <ul id="nav">
+    <li><a href="#">home</a></li>
+    <li><a href="#apple">apple</a></li>
+    <li><a href="#orange">orange</a></li>
+    <li><a href="#search">search</a></li>
+    <li><a href="tag-based.html">tag based</a></li>
+  </ul>
+
+  <a href="#search">search</a>
+
+  <orange>
+    <script>
+
+      this.on('mount', function() {
+        // right after the tag is mounted on the page
+      })    
+    
+    </script>
+      
+  </orange>
+
+  
+  <apple>
+  </apple>
+
+  <script type="riot/tag">
+    <apple>
+      <h3>Apple</h3>
+    </apple>
+  </script>
+
+  <script type="riot/tag">
+    <orange>
+      <h3>Orange</h3>
+    </orange>
+  </script>
+
+
+  <script>
+
+    // route(function(collection, id, action) {
+    // })
+    
+
+  
+    route('/apple', function(name) {
+      riot.mount('apple');
+
+      // document.getElementsByTagName('apple')[0].hidden = false;
+      // document.getElementsByTagName('orange')[0].hidden = true;
+
+    });
+
+    route('/orange', function(name) {
+      riot.mount('orange');
+      // document.getElementsByTagName('orange')[0].hidden = false;
+      // document.getElementsByTagName('apple')[0].hidden = true;
+
+    });
+
+    route('/search?keyword=*', function() {
+      var q = route.query()
+      console.log('Search keyword: ' + q.keyword)
+    })
+
+    route('/search', function(name) {
+      var q = route.query()
+    })
+
+    // route('/', function(name) {
+    //   // document.getElementsByTagName('orange')[0].hidden = true;
+    //   // document.getElementsByTagName('apple')[0].hidden = true;
+
+    // });
+
+    document.getElementById('nav').addEventListener('click', (e) => route(e.target.innerText));
+    
+    // route.base('#!');
+    // route.start(true);
+
+  </script>
+
+
+</body>
+</html>

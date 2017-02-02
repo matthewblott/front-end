@@ -1,20 +1,20 @@
 // can't put a script tag here for mixins
 
-var OptsMixin = {
-  init: function() {
-    this.on('updated', function() { console.log('Updated!') })
-  },
+  var OptsMixin = {
+    init: function() {
+      this.on('updated', function() { console.log('Updated!') })
+    },
 
-  getOpts: function() {
-    return this.opts
-  },
+    getOpts: function() {
+      return this.opts
+    },
 
-  setOpts: function(opts, update) {
-    this.opts = opts
-    if (!update) this.update()
-    return this
+    setOpts: function(opts, update) {
+      this.opts = opts
+      if (!update) this.update()
+      return this
+    }
   }
-}
 
 <navbar>
 
@@ -58,13 +58,13 @@ var OptsMixin = {
 
   <script>
 
+    riot.mixin('mixinName', OptsMixin);
+
     this.mixin(OptsMixin);
 
     click() {
       
       var message = '';
-
-      
 
       console.log(message);
 

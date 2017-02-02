@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+<body>
+  <hello-world />
+  <script type="riot/tag">
+    <hello-world>
+      <h3>Hello { opts.greet }!</h3>
+    </hello-world>
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/riot/3.0.7/riot+compiler.min.js"></script>
+  <script>
+    riot.mount('hello-world', { greet: 'World' });
+  </script>
+</body>
+</html>
