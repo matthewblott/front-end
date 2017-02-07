@@ -1,0 +1,25 @@
+# install browserify globally
+npm install -g browserify
+
+# install watchify globally
+npm install -g watchify
+
+# install exorcist globally,
+# this allows any source maps created with browserify to be stored in a separate file
+npm install -g exorcist
+
+# simple
+browserify main.dev.js > main.js
+
+# simple with external source maps
+browserify main.dev.js --debug | exorcist main.js.map > main.js
+
+# take main.dev.js
+# parse the riot tags (which have an html extension)
+#   compact the html
+# add external source maps
+# bundle to main.js
+browserify -t [ riotify --ext html --compact ] main.dev.js --debug | exorcist main.js.map > main.js
+
+# other
+watchify main.dev.js -o 'exorcist main.js.map > main.js' -d

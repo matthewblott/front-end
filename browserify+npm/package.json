@@ -1,0 +1,14 @@
+{
+  "name": "myproject",
+  "config": {
+    "file": "file",
+    "foo": "foo"
+  },
+  "scripts": {
+    "all": "npm run step2 && npm run step1",
+    "demo": "echo \"Hello World!\"",
+    "browserify": "# browserify main.dev.js > main. js",
+    "step1": "echo blah > $npm_package_config_file",
+    "step2": "echo $npm_package_config_foo"
+  }
+}

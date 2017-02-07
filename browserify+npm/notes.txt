@@ -1,0 +1,13 @@
+# npm script variables
+http://ianmcnally.me/blog/2016/2/4/variables-in-npm-scripts
+
+# articles
+https://spapas.github.io/2015/05/27/using-browserify-watchify/
+https://www.keithcirkel.co.uk/how-to-use-npm-as-a-build-tool/
+
+
+
+browserify -t [ riotify --ext html --compact ] main.dev.js --debug | exorcist main.js.map > main.js
+
+# other
+watchify main.dev.js -o 'exorcist main.js.map > main.js' -d

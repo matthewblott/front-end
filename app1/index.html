@@ -1,0 +1,40 @@
+<html>
+<head>
+  <style>
+    #header {
+      height: 80px;
+    }
+  
+    #main {
+      height: 170px;
+    }
+
+    #footer {
+      height: 50px;
+    }
+
+  </style>
+
+</head>
+
+  <body>
+
+    <div id="header">
+      <header />
+    </div>
+    <div id="main">
+      <main />
+    </div>
+    <div id="footer">
+      <footer />
+    </div>
+
+    <script type="riot/tag" data-src="src/header.html"></script>
+    <script type="riot/tag" data-src="src/nav.html"></script>
+    <script type="riot/tag" data-src="src/main.html"></script>
+    <script type="riot/tag" data-src="src/footer.html"></script>
+
+    <script src="https://cdn.jsdelivr.net/riot/3.0.7/riot+compiler.min.js"></script>
+    <script src="main.js"></script>    
+  </body>
+</html>

@@ -1,0 +1,5 @@
+# npm
+npm run browserify
+
+# 
+npm run watch
