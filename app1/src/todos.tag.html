@@ -1,0 +1,21 @@
+<todos>
+  <h1>Todos</h1>
+
+  <ul>
+    <li each={todo in opts.todos }>{todo.name} {todo.description}</li>
+  </ul>
+
+  <script>
+
+    this.on('mount', () => {
+      opts.callback(this);
+    });
+
+    this.on('data_loaded', (todos) => {
+      opts.todos = todos;
+      this.update();
+    });
+
+  </script>
+
+</todos>

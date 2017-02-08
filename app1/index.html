@@ -5,7 +5,7 @@
       height: 80px;
     }
   
-    #main {
+    #main, #todos {
       height: 170px;
     }
 
@@ -22,17 +22,22 @@
     <div id="header">
       <header />
     </div>
-    <div id="main">
+    <!--<div id="main">
       <main />
+    </div>-->
+    <div id="todos">
+      <todos />
     </div>
     <div id="footer">
       <footer />
     </div>
 
-    <script type="riot/tag" data-src="src/header.html"></script>
-    <script type="riot/tag" data-src="src/nav.html"></script>
-    <script type="riot/tag" data-src="src/main.html"></script>
-    <script type="riot/tag" data-src="src/footer.html"></script>
+    <script type="riot/tag" data-src="src/footer.tag.html"></script>
+    <script type="riot/tag" data-src="src/header.tag.html"></script>
+    <script type="riot/tag" data-src="src/login.tag.html"></script>
+    <script type="riot/tag" data-src="src/main.tag.html"></script>
+    <script type="riot/tag" data-src="src/nav.tag.html"></script>
+    <script type="riot/tag" data-src="src/todos.tag.html"></script>
 
     <script src="https://cdn.jsdelivr.net/riot/3.0.7/riot+compiler.min.js"></script>
     <script src="main.js"></script>    

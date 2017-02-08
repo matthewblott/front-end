@@ -1,0 +1,6 @@
+{
+  "todos": [
+    { "name": "Work on Riot", "description": "do some work on Riot" },
+    { "name": "Shower", "description": "take a shower" }    
+  ]
+}
