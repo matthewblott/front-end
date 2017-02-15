@@ -1,12 +1,12 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 var riot = require('riot');
-module.exports = riot.tag2('footer', '<div><h5>footer</h5></div>', '', '', function(opts) {
+module.exports = riot.tag2('footer', '<div><h5>footer!</h5></div>', '', '', function(opts) {
 });
-},{"riot":7}],2:[function(require,module,exports){
+},{"riot":8}],2:[function(require,module,exports){
 var riot = require('riot');
 module.exports = riot.tag2('header', '<h1>{opts.title}</h1><nav></nav>', '', '', function(opts) {
 });
-},{"riot":7}],3:[function(require,module,exports){
+},{"riot":8}],3:[function(require,module,exports){
 (() => {
 
   var utils = require('./utils');
@@ -14,10 +14,14 @@ module.exports = riot.tag2('header', '<h1>{opts.title}</h1><nav></nav>', '', '',
   
   console.log(name + ' was returned from the getName func');
 
+  require('./routing')();
+
   require('./footer.tag.html');
   require('./header.tag.html');
   require('./main.tag.html');
   require('./todos.tag.html');
+
+
 
   riot.mount('header', { title: 'app 1' });
   //riot.mount('main');
@@ -47,11 +51,21 @@ module.exports = riot.tag2('header', '<h1>{opts.title}</h1><nav></nav>', '', '',
   riot.mount('todos', { callback: callback });
 
 })();
-},{"./footer.tag.html":1,"./header.tag.html":2,"./main.tag.html":4,"./todos.tag.html":5,"./utils":6}],4:[function(require,module,exports){
+},{"./footer.tag.html":1,"./header.tag.html":2,"./main.tag.html":4,"./routing":5,"./todos.tag.html":6,"./utils":7}],4:[function(require,module,exports){
 var riot = require('riot');
 module.exports = riot.tag2('main', '<div> main </div>', '', '', function(opts) {
 });
-},{"riot":7}],5:[function(require,module,exports){
+},{"riot":8}],5:[function(require,module,exports){
+module.exports = () => {
+
+  route('/about', (name) => {
+    console.log('about link was invoked')
+  });
+
+  route.start();
+  
+}
+},{}],6:[function(require,module,exports){
 var riot = require('riot');
 module.exports = riot.tag2('todos', '<h1>Todos</h1><ul><li each="{todo in opts.todos}">{todo.name} {todo.description}</li></ul>', '', '', function(opts) {
 
@@ -65,32 +79,11 @@ module.exports = riot.tag2('todos', '<h1>Todos</h1><ul><li each="{todo in opts.t
     });
 
 });
-},{"riot":7}],6:[function(require,module,exports){
+},{"riot":8}],7:[function(require,module,exports){
 module.exports.getName = () => {
-  return 'utilxy';
+  return 'utilxysss';
 }
-
-// module.exports.getTodos = (tag) => {
-
-//   var req = new XMLHttpRequest();
-
-//   req.open('GET', 'todos.json', true);
-  
-//   req.onload = () => {
-
-//     if(req.status === 200){
-//       var data = JSON.parse(req.responseText);
-
-//       tag.trigger('data_loaded', data.todos);
-
-//     };
-
-//   };
-  
-//   req.send();
-
-// }
-},{}],7:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 /* Riot v3.1.0, @license MIT */
 (function (global, factory) {
 	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :

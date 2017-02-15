@@ -10,6 +10,7 @@
     "browserify": "browserify -t [ riotify --ext html --compact ] ./src/main.dev.js --debug | exorcist main.js.map > main.js",
     "clear": "rm main.js main.js.map",
     "server": "http-server",
-    "watch": "npm-watch"
+    "watch": "npm-watch",
+    "run-all": "npm run watch & http-server"
   }
 }

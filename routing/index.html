@@ -40,9 +40,6 @@
   <orange>
     <script>
 
-      this.on('mount', function() {
-        // right after the tag is mounted on the page
-      })    
     
     </script>
       
@@ -67,45 +64,13 @@
 
   <script>
 
-    // route(function(collection, id, action) {
-    // })
-    
+    route.start(true);
 
-  
-    route('/apple', function(name) {
-      riot.mount('apple');
+    route((collection, id, action) => {
+      
+      console.log(collection);
 
-      // document.getElementsByTagName('apple')[0].hidden = false;
-      // document.getElementsByTagName('orange')[0].hidden = true;
-
-    });
-
-    route('/orange', function(name) {
-      riot.mount('orange');
-      // document.getElementsByTagName('orange')[0].hidden = false;
-      // document.getElementsByTagName('apple')[0].hidden = true;
-
-    });
-
-    route('/search?keyword=*', function() {
-      var q = route.query()
-      console.log('Search keyword: ' + q.keyword)
     })
-
-    route('/search', function(name) {
-      var q = route.query()
-    })
-
-    // route('/', function(name) {
-    //   // document.getElementsByTagName('orange')[0].hidden = true;
-    //   // document.getElementsByTagName('apple')[0].hidden = true;
-
-    // });
-
-    document.getElementById('nav').addEventListener('click', (e) => route(e.target.innerText));
-    
-    // route.base('#!');
-    // route.start(true);
 
   </script>
 

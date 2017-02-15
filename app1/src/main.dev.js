@@ -5,10 +5,14 @@
   
   console.log(name + ' was returned from the getName func');
 
+  require('./routing')();
+
   require('./footer.tag.html');
   require('./header.tag.html');
   require('./main.tag.html');
   require('./todos.tag.html');
+
+
 
   riot.mount('header', { title: 'app 1' });
   //riot.mount('main');

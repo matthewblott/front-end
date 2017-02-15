@@ -1,6 +1,100 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
+<head>
+  <style>
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      display: inline;
+    }
+
+    .hide {
+      display: none;
+    }
+
+    .show {
+      display: block;
+    }
+
+  </style>
+</head>
 <body>
-  
+  <script src="https://cdn.jsdelivr.net/riot/3.0.7/riot+compiler.js"></script>
+  <script src="route+tag.js"></script>
+
+  <ul>
+    <li>
+      <a href="#">home</a>
+    </li>
+    <li>
+      <a href="#apple">apple</a>
+    </li>
+    <li>
+      <a href="#orange">orange</a>
+    </li>
+    <li>
+      <a href="#peach">peach</a>
+    </li>
+  </ul>
+
+  <app />
+
+  <script type="riot/tag">
+
+    <app>
+      <router>
+        <route path="">
+          <h3>Home</h3>
+        </route>
+        <route path="apple">
+          <apple />
+        </route>
+        <route path="orange">
+          <orange />
+        </route>
+        <route path="peach">
+          <h3>Peach</h3>
+        </route>
+      </router>
+
+    </app>
+
+  </script>
+
+
+
+  <script type="riot/tag">
+    <apple>
+      <h3>Apple</h3>
+    </apple>
+  </script>
+
+  <script type="riot/tag">
+    <orange>
+      <h3>Orange</h3>
+    </orange>
+  </script>
+
+
+  <script>
+
+    riot.mount('*')
+
+    route((collection, id, action) => {
+      
+      var message = `${collection}`;
+
+    });
+
+    route.start(true);
+
+  </script>
+
+
 </body>
 </html>
