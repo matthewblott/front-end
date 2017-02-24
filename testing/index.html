@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <script src="https://rawgit.com/riot/riot/master/riot%2Bcompiler.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mocha/1.13.0/mocha.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/chai/1.9.0/chai.js"></script>  
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/mocha/1.13.0/mocha.css" />
+    <script type="riot/tag" src="hello.tag.html"></script>
+  </head>
+
+  <body>
+    <div id="mocha"></div>
+    <script>mocha.setup('bdd')</script>
+    <script src="hello-spec.js"></script>
+    <script>mocha.run()</script>
+  </body>
+
+</html>

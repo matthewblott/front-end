@@ -12,8 +12,6 @@
   require('./main.tag.html');
   require('./todos.tag.html');
 
-
-
   riot.mount('header', { title: 'app 1' });
   //riot.mount('main');
   riot.mount('footer');

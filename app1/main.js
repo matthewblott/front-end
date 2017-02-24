@@ -21,8 +21,6 @@ module.exports = riot.tag2('header', '<h1>{opts.title}</h1><nav></nav>', '', '',
   require('./main.tag.html');
   require('./todos.tag.html');
 
-
-
   riot.mount('header', { title: 'app 1' });
   //riot.mount('main');
   riot.mount('footer');

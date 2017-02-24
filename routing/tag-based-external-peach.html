@@ -24,6 +24,8 @@
   </style>
 </head>
 <body>
+
+  <script type="riot/tag" data-src="peach.tag.html"></script>
   <script src="https://cdn.jsdelivr.net/riot/3.0.7/riot+compiler.js"></script>
   <script src="route+tag.js"></script>
 
@@ -58,7 +60,7 @@
           <orange />
         </route>
         <route path="peach">
-          <h3>Peach</h3>
+          <peach />
         </route>
       </router>
 
@@ -83,13 +85,9 @@
     riot.mount('app')
 
     route((collection, id, action) => {
-      
       var message = `${collection}, ${id}, ${action}`;
-
       console.log(message);
-
     });
-
 
     route.start(true);
 
